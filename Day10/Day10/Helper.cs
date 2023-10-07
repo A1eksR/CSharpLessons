@@ -15,6 +15,11 @@ namespace Day10
 			}
 
 		}
+
+		public static void Uzd2(int[] masivs)
+		{
+			Console.WriteLine(masivs.Length);
+		}
 	}
 
 }
