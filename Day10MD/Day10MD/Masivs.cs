@@ -25,7 +25,7 @@ namespace Day10MD
 			{
 				if (masivs[i] %2 == 0)
 				{
-					Console.WriteLine(masivs);
+					Console.WriteLine(masivs[i]);
 				}
 				
 			}
@@ -37,7 +37,7 @@ namespace Day10MD
 			{
 				if (lists[i].Length %2 == 0)
 				{
-					Console.WriteLine(lists);
+					Console.WriteLine(lists[i]);
 				}
 			}
 		}
