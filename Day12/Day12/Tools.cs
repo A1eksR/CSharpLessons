@@ -22,7 +22,9 @@ namespace Day12
 			for(int i = 0; i < masivs.Length; i++)
 			{
 				Console.Write(masivs[i]);
+				
 			}
+			Console.WriteLine();
 		}
 
 
