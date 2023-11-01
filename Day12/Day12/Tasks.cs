@@ -13,9 +13,14 @@ namespace Day12
 			for (int i = masivs.Length - 1; i >= 0; i--)
 			{
 				lists.Add(masivs[i]);
+            }
+
+			for(int i = 0; i < lists.Count; i++)
+			{
+				Console.WriteLine(lists[i]);
 			}
-			Console.WriteLine(lists);
-		}
+            
+        }
 
 
 	}
