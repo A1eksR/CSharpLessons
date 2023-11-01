@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<int> lists = new List<int>();
+        /*List<int> lists = new List<int>();
         lists.Add(1);
         lists.Add(2);
         lists.Add(3);
@@ -13,7 +13,17 @@ class Program
 
         int[] masivs = { 6, 7, 8, 9, 10 };
         Tools.MetodeMasivs(masivs);
-        Console.ReadLine();
+        Console.ReadLine();*/
+
+        Pet pet1 = new Pet("Janis, ", " Papagailis", 9);
+        pet1.IzvaditInfo();
+
+        Pet pet2 = new Pet("Alberts, ", " Lauva", 13);
+        pet2.IzvaditInfo();
+
+        Pet pet3 = new Pet("Andrejs, ", " Begimots", 15);
+        pet1.IzvaditInfo();
+
     }
 
 }
