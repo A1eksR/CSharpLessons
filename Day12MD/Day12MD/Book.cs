@@ -9,9 +9,9 @@ namespace Day12MD
 		public int year;
 		public int pirmsCikGadiemIzdota;
 
-		public void PirmsCikGadiem(int pirmsCikGadiemIzdota)
+		public int PirmsCikGadiem()
 		{
-			int gramataIzdotaGadi = 2023 - pirmsCikGadiemIzdota;
+			return 2023 - this.year;
 		}
 
 		public Book(String name, String authorName, String authorLastName, int year, int gramataIzdotaGadi)
