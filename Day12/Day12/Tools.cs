@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 namespace Day12
 {
 	public class Tools

@@ -24,6 +24,15 @@ class Program
         Pet pet3 = new Pet("Andrejs, ", " Begimots", 15);
         pet1.IzvaditInfo();
 
+        List<String> petLists = new List<String>();
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine("Ievadi Majdzivnieku!");
+            String petIevade = Console.ReadLine();
+            petLists.Add(petIevade);
+        }
+       
+
     }
 
 }
