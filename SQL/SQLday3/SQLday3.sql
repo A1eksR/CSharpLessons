@@ -6,5 +6,8 @@ FROM artists, albums
 WHERE artists.ArtistId = albums.ArtistId;
 
 SELECT artists.ArtistId, albums.ArtistId, tracks.AlbumId
-FROM artists, albums, tracks
-ON artists.ArtistId = albums.ArtistId;
+FROM artists
+INNER JOIN albums
+ON artists.ArtistId = tracks.AlbumID
+INNER JOIN albums
+ON albums.AlbumId = tracks.AlbumId;
