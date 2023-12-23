@@ -1,33 +1,60 @@
 ﻿namespace day18;
-
+using System.Data.SQLite;
 class Program
 {
     static void Main(string[] args)
     {
-        Izveleties();
+        
+        Connections.CreateConn();
+        
+        Connections.ReadEmployeeInfo(SQLiteConnection conn);
         Console.ReadLine();
     }
-
-    static void Izveleties()
-    {
-        Console.WriteLine("ko gribi izvadit : ");
-        Console.WriteLine("1- klientu skaitu, ");
-        Console.WriteLine("2- garako dziesmu, ");
-        Console.WriteLine("3- klientu vardu un uzvardu un dziesmas kuras vini ir nopirkusi. ");
-        int izvele = Convert.ToInt32(Console.ReadLine());
-
-        if(izvele == 1)
-        {
-            Console.WriteLine();
-        }
-        else if(izvele == 2)
-        {
-            Console.WriteLine();
-        }
-        else if(izvele == 3)
-        {
-            Console.WriteLine();
-        }
-    }
 }
+class Connections
+{
+    SQLiteConnection conn = CreateConn();
 
+    public static SQLiteConnection CreateConn()
+    {
+        
+        String desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        String dbPath = "chinook.db";
+        String fullName = Path.Combine(desktopPath, dbPath);
+
+        SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source=" + fullName + "; Version=3");
+
+        try
+        {
+            sqlite_conn.Open();
+        }
+        catch
+        {
+            Console.WriteLine("Error");
+        }
+
+        return sqlite_conn;
+    }
+
+    public static void ReadEmployeeInfo(SQLiteConnection conn)
+    {
+        SQLiteDataReader sQLiteDataReader;
+        SQLiteCommand cmd = conn.CreateCommand();
+        cmd.CommandText =
+            "SELECT (employee.FirstName || ' ' || employee.LastName) as 'Employee name'"+
+            "(employee.Title || ' ' || employee.City || ' ' || employee.Country) as 'Employee info'" +
+            "FROM employee";
+
+        sQLiteDataReader = cmd.ExecuteReader();
+
+        while (sQLiteDataReader.Read())
+        {
+            String employeeName = sQLiteDataReader.GetString(0);
+            String employeeInfo = sQLiteDataReader.GetString(1);
+
+            Console.WriteLine(employeeName + ": " + employeeInfo);
+        }
+        conn.Close();
+    }
+
+}
