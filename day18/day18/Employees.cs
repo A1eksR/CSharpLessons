@@ -5,10 +5,10 @@ namespace day18
 	public class Employees
 	{
         public int id { get; set; }
-        public String vards;
-        public String uzvards;
-        public String pilseta;
-        public String valsts;
+        public String vards { get; set; }
+        public String uzvards { get; set; }
+        public String pilseta { get; set; }
+        public String valsts { get; set; }
 
         public Employees(int id, String vards, String uzvards, String pilseta, String valsts)
         {
@@ -38,31 +38,57 @@ namespace day18
 
             return sqlite_conn;
         }
-        public static void ReadEmployeeInfo(SQLiteConnection conn)
+
+
+        public Employees(SQLiteConnection conn)
         {
-            SQLiteDataReader sQLiteDataReader;
-            SQLiteCommand cmd = conn.CreateCommand();
-            cmd.CommandText =
-                "SELECT employees.EmployeeId, employees.FirstName, employees.LastName, employees.City, employees.Country" +
+            SQLiteDataReader sQLiteDataReader1;
+            SQLiteCommand cmd1 = conn.CreateCommand();
+            cmd1.CommandText =
+                "SELECT employee.FirstName" +
                 "FROM employees;";
 
-            sQLiteDataReader = cmd.ExecuteReader();
+            sQLiteDataReader1 = cmd1.ExecuteReader();
 
-            while (sQLiteDataReader.Read())
-            {
-                int id = sQLiteDataReader.GetString(0);
-                String employeeName = sQLiteDataReader.GetString(1);
-                String employeeInfo = sQLiteDataReader.GetString(2);
-                String city = sQLiteDataReader.GetString(3);
-                String country = sQLiteDataReader.GetString(4);
+            SQLiteDataReader sQLiteDataReader2;
+            SQLiteCommand cmd2 = conn.CreateCommand();
+            cmd2.CommandText =
+                "SELECT employee.LastName" +
+                "FROM employees;";
 
+            sQLiteDataReader2 = cmd2.ExecuteReader();
 
-                Console.WriteLine(employeeName + ": " + employeeInfo);
-                Console.WriteLine(country + ", " + city);
-                Console.WriteLine("------------");
-            }
+            SQLiteDataReader sQLiteDataReader3;
+            SQLiteCommand cmd3 = conn.CreateCommand();
+            cmd3.CommandText =
+                "SELECT employee.EmployeeId" +
+                "FROM employees;";
+
+            sQLiteDataReader3= cmd3.ExecuteReader();
+
+            SQLiteDataReader sQLiteDataReader4;
+            SQLiteCommand cmd4 = conn.CreateCommand();
+            cmd4.CommandText =
+                "SELECT employee.City" +
+                "FROM employees;";
+
+            sQLiteDataReader4 = cmd4.ExecuteReader();
+
+            SQLiteDataReader sQLiteDataReader5;
+            SQLiteCommand cmd5 = conn.CreateCommand();
+            cmd5.CommandText =
+                "SELECT employee.City" +
+                "FROM employees;";
+
+            sQLiteDataReader5 = cmd5.ExecuteReader();
+
+            id = sQLiteDataReader3;
+            vards = sQLiteDataReader1;
+            uzvards = sQLiteDataReader3;
+            pilseta = sQLiteDataReader4;
+            valsts = sQLiteDataReader5;
         }
-
+        
     }
 }
 
