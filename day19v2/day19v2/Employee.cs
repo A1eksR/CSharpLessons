@@ -1,8 +1,8 @@
 ﻿using System;
-namespace day19
+namespace day19v2
 {
-	public class Employee
-	{
+    public class Employee
+    {
         public int id { get; set; }
         public String vards { get; set; }
         public String uzvards { get; set; }
@@ -10,7 +10,7 @@ namespace day19
         public String valsts { get; set; }
 
         public Employee(int id, String vards, String uzvards, String pilseta, String valsts)
-		{
+        {
             this.id = id;
             this.vards = vards;
             this.uzvards = uzvards;
@@ -24,5 +24,6 @@ namespace day19
             Console.WriteLine("-----------------");
         }
     }
+
 }
 
