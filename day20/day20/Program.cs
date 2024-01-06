@@ -25,8 +25,17 @@ class Program
         Console.WriteLine("Ievadi uzvārdu!");
         String uzvards = Console.ReadLine();
 
-         authors.Add(new Author(id, vards, uzvards));
         Queries.InsertAuthor(connection.conn, id, vards, uzvards);
+
+        authors = Queries.CreateAuthorList(connection.conn);
+
+        foreach (Author employee in authors)
+        {
+            employee.ShowInfo();
+        }
     }
+
+
+
 }
 

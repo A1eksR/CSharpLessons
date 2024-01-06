@@ -11,11 +11,9 @@ namespace day20
 
             SqliteDataReader sQLiteDataReader;
             SqliteCommand cmd = conn.CreateCommand();
-            cmd.CommandText =
-                "SELECT Autors.Id, Autors.Vards, Autors.Uzvards" +
+            cmd.CommandText = "SELECT Autors.Id, Autors.Vards, Autors.Uzvards " +
                 "FROM Autors;";
                 
-
             sQLiteDataReader = cmd.ExecuteReader();
             while (sQLiteDataReader.Read())
             {
@@ -33,13 +31,12 @@ namespace day20
         {
             SqliteCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "INSERT INTO Author(Id, vards, uzvards) " +
+            cmd.CommandText = "INSERT INTO Autors(Id, vards, uzvards) " +
                 "VALUES (@Id, @vards, @uzvards)";
 
             cmd.Parameters.AddWithValue("@Id", id);
-            cmd.Parameters.AddWithValue("@uzvards", vards);
+            cmd.Parameters.AddWithValue("@vards", vards);
             cmd.Parameters.AddWithValue("@uzvards", uzvards);
-
 
             try
             {
@@ -49,8 +46,6 @@ namespace day20
             {
                 Console.WriteLine("SQL error");
             }
-
-
         }
     }
 }
