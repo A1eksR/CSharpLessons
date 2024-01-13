@@ -14,7 +14,11 @@ class Program
         int izvele = Convert.ToInt32(Console.ReadLine());
         if(izvele == 1)
         {
-            Queries.InsertBook(connection.conn, int id, String nosaukums, int authorId, String vards, String uzvards);
+            int id = -1;
+            String nosaukums = "";
+            int authorId = -1;
+
+            Queries.InsertBook(connection.conn, id, nosaukums, authorId);
         }
         else if (izvele == 2)
         {

@@ -12,7 +12,7 @@ namespace Day20Md
             SqliteDataReader sQLiteDataReader;
             SqliteCommand cmd = conn.CreateCommand();
             cmd.CommandText = "SELECT Books.Id, Books.Nosaukums, Books.AuthorId, Authors.Vards, Authors.Uzvards" +
-                "FROM Books, Authors;";
+                "FROM Books, Authors WHERE Books.AuthorId = Authors.AuthorId;";
 
             sQLiteDataReader = cmd.ExecuteReader();
             while (sQLiteDataReader.Read())
@@ -29,22 +29,17 @@ namespace Day20Md
             return books;
         }
 
-        public static void InsertBook(SqliteConnection conn, int id, String nosaukums, int authorId, String vards, String uzvards)
+        public static void InsertBook(SqliteConnection conn, int id, String nosaukums, int authorId)
         {
             SqliteCommand cmd = conn.CreateCommand();
 
             cmd.CommandText = "INSERT INTO Books(Id, Nosaukums, AuthorId) " +
-                "VALUES (@Id, @Nosaukums, @AuthorId)" +
-                "INSERT INTO Authors(Vards, Uzvards) " +
-                "VALUES (@Vards, @Uzvards)";
+                "VALUES (@Id, @Nosaukums, @AuthorId);";
             
 
             cmd.Parameters.AddWithValue("@Id", id);
             cmd.Parameters.AddWithValue("@Nosaukums", nosaukums);
             cmd.Parameters.AddWithValue("@AuthorId", authorId);
-            cmd.Parameters.AddWithValue("@Vards", vards);
-            cmd.Parameters.AddWithValue("@Uzvards", uzvards);
-
             try
             {
                 cmd.ExecuteNonQuery();
