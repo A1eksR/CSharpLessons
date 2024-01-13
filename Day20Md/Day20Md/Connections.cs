@@ -3,11 +3,11 @@ using Microsoft.Data.Sqlite;
 
 namespace Day20Md
 {
-    public class Connection
+    public class Connections
     {
         public SqliteConnection conn { get; set; }
 
-        public Connection()
+        public Connections()
         {
             conn = CreateConn();
         }
@@ -20,7 +20,7 @@ namespace Day20Md
         private static SqliteConnection CreateConn()
         {
             String desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            String dbPath = "SQL+c#2.db";
+            String dbPath = "SqlBooks.db";
             String fullName = Path.Combine(desktopPath, dbPath);
 
             SqliteConnection sqlite_conn = new SqliteConnection("Data Source=" + fullName + ";");
