@@ -5,22 +5,17 @@ CREATE TABLE Books(
 );
 
 INSERT INTO Books(Id, Nosaukums, AuthorId)
-VALUES(1, PirmaGramata, 1);
-
-INSERT INTO Books(Id, Nosaukums, AuthorId)
-VALUES(2, OtraGramata, 2);
+VALUES(1, 'PirmaGramata', 1),
+      (2, 'OtraGramata', 2);
 
 
 CREATE TABLE Authors(
     AuthorId PRIMARY KEY,
     Vards TEXT,
-    Uzvards TEXT,
-    Id INTEGER REFERENCES Books(Id)
+    Uzvards TEXT
 );
 
-INSERT INTO Authors(AuthorId, Vards, Uzvards, Id)
-VALUES(1, 'Janis', 'Abolins', 1);
-
-INSERT INTO Authors(AuthorId, Vards, Uzvards, Id)
-VALUES(2, 'Jekabs', 'Berzins', 2)
+INSERT INTO Authors(AuthorId, Vards, Uzvards)
+VALUES(1, 'Janis', 'Abolins'),
+      (2, 'Jekabs', 'Berzins');
 
