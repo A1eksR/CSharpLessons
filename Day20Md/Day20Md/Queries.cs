@@ -11,8 +11,9 @@ namespace Day20Md
 
             SqliteDataReader sQLiteDataReader;
             SqliteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT Books.Id, Books.Nosaukums, Books.AuthorId, Authors.Vards, Authors.Uzvards" +
-                "FROM Books, Authors WHERE Books.AuthorId = Authors.AuthorId;";
+            cmd.CommandText = "SELECT Books.Id, Books.Nosaukums, Books.AuthorId, Authors.Vards, Authors.Uzvards " +
+                "FROM Books, Authors " +
+                "WHERE Books.AuthorId = Authors.AuthorId;";
 
             sQLiteDataReader = cmd.ExecuteReader();
             while (sQLiteDataReader.Read())
@@ -43,6 +44,7 @@ namespace Day20Md
             try
             {
                 cmd.ExecuteNonQuery();
+                Console.WriteLine("It worked!");
             }
             catch
             {
