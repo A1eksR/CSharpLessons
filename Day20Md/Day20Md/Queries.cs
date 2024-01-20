@@ -7,13 +7,12 @@ namespace Day20Md
     {
         public static List<Book> CreateBookList(SqliteConnection conn)
         {
-            List<Book> books = new List<Book>();
 
+            List<Book> books = new List<Book>();
             SqliteDataReader sQLiteDataReader;
             SqliteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT Books.Id, Books.Nosaukums, Books.AuthorId, Authors.Vards, Authors.Uzvards " +
-                "FROM Books, Authors " +
-                "WHERE Books.AuthorId = Authors.AuthorId;";
+            cmd.CommandText = "SELECT Books.Id, Books.Nosaukums, Books.AuthorId, Authors.Vards, Authors.Uzvards" +
+                "FROM Books, Authors WHERE Books.AuthorId = Authors.AuthorId;";
 
             sQLiteDataReader = cmd.ExecuteReader();
             while (sQLiteDataReader.Read())
@@ -44,7 +43,6 @@ namespace Day20Md
             try
             {
                 cmd.ExecuteNonQuery();
-                Console.WriteLine("It worked!");
             }
             catch
             {
