@@ -12,18 +12,8 @@ class Program
         //ReadFile();
         Connection connection = new Connection();
 
-        Console.WriteLine("Ievadi id");
-        int id = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Ievadi vardu");
-        String vards = Console.ReadLine();
-        Console.WriteLine("Ievadi autora id");
-        String uzvards = Console.ReadLine();
-        Console.WriteLine("Ievadi pilsetu");
-        String city = Console.ReadLine();
-        Console.WriteLine("country");
-        String country = Console.ReadLine();
-
-        Queries.InsertEmp(connection.conn, id, vards, uzvards, city, country);
+        Employee emp1 = new Employee(1, "arturs", "Abolins", "Riga", "Latvija");
+        Queries.InsertEmp(connection, emp1);
 
         Console.ReadLine();
     }
