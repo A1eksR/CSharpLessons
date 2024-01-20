@@ -6,33 +6,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        ReadFile();
-        Employee em = new Employee(1, "Janis", "Berzins", "Riga", "Latvia");
-        String json = JsonSerializer.Serialize(em);
-
         List<Employee> employees = new List<Employee>();
-        employees.Add(em);
-        employees.Add(new Employee(2, "Peteris", "Liepa", "Riga", "Latvia"));
-        employees.Add(new Employee(3, "Anna", "Ozola", "Riga", "Latvia"));
-        employees.Add(new Employee(4, "Liga", "Kaktina", "Riga", "Latvia"));
+        //ReadFile();
+        Connection connection = new Connection();
 
-        var options = new JsonSerializerOptions
-        {
-            WriteIndented = true
-        };
-
-        String json2 = JsonSerializer.Serialize(employees, options);
-        List<Employee> employees2 = JsonSerializer.Deserialize<List<Employee>>(json2);
-        foreach (Employee emp in employees2)
-        {
-            emp.Print();
-        }
-
+        Employee em1 = new Employee(1, "Arturs", "Abolins", "Riga", "Latvija");
+        employees.Add(em1);
 
         Console.ReadLine();
-
     }
-    public static void ReadFile()
+    /*public static void ReadFile()
     {
         String filename = "json.txt";
         try
@@ -56,6 +39,7 @@ class Program
             Console.WriteLine("Error!");
             Console.WriteLine(ex.Message);
         }
-    }
+    }*/
+    
 }
 
