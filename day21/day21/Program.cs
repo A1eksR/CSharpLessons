@@ -1,4 +1,6 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics.Metrics;
+using System.Text.Json;
+using Microsoft.Data.Sqlite;
 
 namespace day21;
 
@@ -6,12 +8,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<Employee> employees = new List<Employee>();
+
         //ReadFile();
         Connection connection = new Connection();
 
-        Employee em1 = new Employee(1, "Arturs", "Abolins", "Riga", "Latvija");
-        employees.Add(em1);
+        Console.WriteLine("Ievadi id");
+        int id = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Ievadi vardu");
+        String vards = Console.ReadLine();
+        Console.WriteLine("Ievadi autora id");
+        String uzvards = Console.ReadLine();
+        Console.WriteLine("Ievadi pilsetu");
+        String city = Console.ReadLine();
+        Console.WriteLine("country");
+        String country = Console.ReadLine();
+
+        Queries.InsertEmp(connection.conn, id, vards, uzvards, city, country);
 
         Console.ReadLine();
     }

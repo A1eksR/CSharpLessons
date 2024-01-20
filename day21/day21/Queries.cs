@@ -5,10 +5,10 @@ namespace day21
 {
 	public class Queries
 	{
-        public static List<Employee> CreateEmplList(SqliteConnection conn, List<Employee> employees)
+        public static List<Employee> CreateEmplList(SqliteConnection conn)
         {
-            
 
+            List<Employee> employees = new List<Employee>();
             SqliteDataReader sQLiteDataReader;
             SqliteCommand cmd = conn.CreateCommand();
             cmd.CommandText =
@@ -28,6 +28,21 @@ namespace day21
             }
 
             return employees;
+        }
+        public static void InsertEmp(SqliteConnection conn, int id, String vards, String uzvards, String city, String country)
+        {
+            SqliteCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "INSERT INTO Employees(EmployeeId, FirstName, Lastname, city, country) " +
+                "VALUES (@id, @firstName, @lastName, @city, @country)";
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@firstName", vards);
+            cmd.Parameters.AddWithValue("@lastName", uzvards);
+            cmd.Parameters.AddWithValue("@city", city);
+            cmd.Parameters.AddWithValue("@country", country);
+
+            cmd.ExecuteNonQuery();
         }
     }
 }
