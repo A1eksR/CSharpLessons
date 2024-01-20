@@ -29,18 +29,18 @@ namespace day21
 
             return employees;
         }
-        public static void InsertEmp(SqliteConnection conn, int id, String vards, String uzvards, String city, String country)
+        public static void InsertEmp(SqliteConnection conn, Employee e)
         {
             SqliteCommand cmd = conn.CreateCommand();
 
             cmd.CommandText = "INSERT INTO Employees(EmployeeId, FirstName, Lastname, city, country) " +
                 "VALUES (@id, @firstName, @lastName, @city, @country)";
 
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.Parameters.AddWithValue("@firstName", vards);
-            cmd.Parameters.AddWithValue("@lastName", uzvards);
-            cmd.Parameters.AddWithValue("@city", city);
-            cmd.Parameters.AddWithValue("@country", country);
+            cmd.Parameters.AddWithValue("@id", e.id);
+            cmd.Parameters.AddWithValue("@firstName", e.vards);
+            cmd.Parameters.AddWithValue("@lastName", e.uzvards);
+            cmd.Parameters.AddWithValue("@city", e.pilseta);
+            cmd.Parameters.AddWithValue("@country", e.valsts);
 
             cmd.ExecuteNonQuery();
         }
