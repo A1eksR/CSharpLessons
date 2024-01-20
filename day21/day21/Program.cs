@@ -13,7 +13,7 @@ class Program
         Connection connection = new Connection();
 
         Employee emp1 = new Employee(1, "arturs", "Abolins", "Riga", "Latvija");
-        Queries.InsertEmp(connection, emp1);
+        Queries.InsertEmp(connection.conn, emp1);
 
         Console.ReadLine();
     }
