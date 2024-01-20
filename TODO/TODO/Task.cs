@@ -18,7 +18,7 @@ namespace TODO
 
 		public void ShowInfo()
 		{
-			Console.WriteLine("id: " + id, "nosaukums: " + title, "apraksts: " + apraksts, "statuss: " + statuss);
+			Console.WriteLine("id: " + id + "nosaukums: " + title + "apraksts: " + apraksts + "statuss: " + statuss);
 			Console.WriteLine("-----------------------");
 		}
 	}
