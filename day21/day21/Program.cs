@@ -9,15 +9,22 @@ class Program
     static void Main(string[] args)
     {
 
-        //ReadFile();
+        ReadFile();
         Connection connection = new Connection();
 
-        Employee emp1 = new Employee(1, "arturs", "Abolins", "Riga", "Latvija");
+        Employee emp1 = new Employee(99, "arturs", "Abolins", "Riga", "Latvija");
+        String json = JsonSerializer.Serialize(emp1);
+        List<Employee> employees = new List<Employee>();
+        employees.Add(emp1);
+
         Queries.InsertEmp(connection.conn, emp1);
+
+        
+
 
         Console.ReadLine();
     }
-    /*public static void ReadFile()
+    public static void ReadFile()
     {
         String filename = "json.txt";
         try
@@ -35,13 +42,18 @@ class Program
                 line = sr.ReadLine();
             }
 
+            
+
+            
         }
         catch (Exception ex)
         {
             Console.WriteLine("Error!");
             Console.WriteLine(ex.Message);
         }
-    }*/
+    }
+
+    
     
 }
 

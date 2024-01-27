@@ -5,10 +5,10 @@ namespace day21
 {
 	public class Queries
 	{
-        public static List<Employee> CreateEmplList(SqliteConnection conn)
+        public static List<Employee> CreateEmplList(SqliteConnection conn, List<Employee> employees)
         {
 
-            List<Employee> employees = new List<Employee>();
+            
             SqliteDataReader sQLiteDataReader;
             SqliteCommand cmd = conn.CreateCommand();
             cmd.CommandText =
