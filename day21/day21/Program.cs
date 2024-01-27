@@ -9,25 +9,17 @@ class Program
     static void Main(string[] args)
     {
         Connection connection = new Connection();
-        Queries emp = new Queries();
         List<Employee> lst = Queries.CreateEmplList(connection.conn);
-        
-        String json = JsonSerializer.Serialize(lst);
-        String desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-        String fullName = Path.Combine(desktopPath, "JSON.txt");
 
-        try
+        var options = new JsonSerializerOptions
         {
-            StreamWriter wr = new StreamWriter(fullName, false);
-            wr.WriteLine(json);
-            wr.Flush();
-            wr.Dispose();
-            Console.WriteLine("Done");
-        }
-        catch
-        {
-            Console.WriteLine("Error!");
-        }
+            WriteIndented = true
+        };
+
+        String json = JsonSerializer.Serialize(lst, options);
+
+        FileRead.SaveFile(json);
+
         Console.ReadLine();
     }
 

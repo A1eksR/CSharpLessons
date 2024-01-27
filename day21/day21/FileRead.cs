@@ -40,5 +40,24 @@ namespace day21
             }
             return list;
         }
+
+        public static void SaveFile(String json)
+        {
+            String desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            String fullName = Path.Combine(desktopPath, "JSON.txt");
+
+            try
+            {
+                StreamWriter wr = new StreamWriter(fullName, false);
+                wr.WriteLine(json);
+                wr.Flush();
+                wr.Dispose();
+                Console.WriteLine("Done");
+            }
+            catch
+            {
+                Console.WriteLine("Error!");
+            }
+        }
     }
 }
