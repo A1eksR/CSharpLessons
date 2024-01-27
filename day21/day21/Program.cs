@@ -9,10 +9,15 @@ class Program
     static void Main(string[] args)
     {
 
+
+    }
+
+    public static void homework()
+    {
         List<Employee> lst = FileRead.ReadFile();
         Connection connection = new Connection();
 
-        foreach(var emp in lst)
+        foreach (var emp in lst)
         {
             Queries.InsertEmp(connection.conn, emp);
         }
