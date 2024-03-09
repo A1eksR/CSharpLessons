@@ -48,14 +48,13 @@ namespace day21
 
             cmd.ExecuteNonQuery();
         }
-        public static void UpdateEmp(SqliteConnection conn, int jaunaisId, String jaunaisVards, String jaunaisUzvards)
+        public static void UpdateEmp(SqliteConnection conn, int ievaditaisId, String jaunaisVards, String jaunaisUzvards)
         { 
             SqliteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "update employee set employees.Id = @id where employeeId = jaunaisId"+
-                "update employee set firstName = @firstName where FirstName = jaunaisVards"+
-                "update employee set lastName = @lastName where LastName = jaunaisUzvards";
+            cmd.CommandText = "SELECT * FROM employees WHERE EmployeeId = ievaditaisId"+
+                "update employee set lastName = @lastName where EmployeeId = ievaditaisId";
 
-            cmd.Parameters.AddWithValue("@id", jaunaisId);
+            //cmd.Parameters.AddWithValue("@id", ievaditaisId);
             cmd.Parameters.AddWithValue("@firstName", jaunaisVards);
             cmd.Parameters.AddWithValue("@lastName", jaunaisUzvards);
         }

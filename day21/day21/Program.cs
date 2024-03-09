@@ -27,14 +27,14 @@ class Program
         }
         else if(izvele == 3)
         {
-            Console.WriteLine("Ievadi jauno id");
-            int jaunaisId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Ievadi jauno vard");
+            Console.WriteLine("Ievadi id");
+            int ievaditaisId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ievadi jauno vardu");
             String jaunaisVards = Console.ReadLine();
             Console.WriteLine("Ievadi jauno uzvardu");
             String jaunaisUzvards = Console.ReadLine();
 
-            Queries.UpdateEmp(connection.conn, jaunaisId, jaunaisVards, jaunaisUzvards);
+            Queries.UpdateEmp(connection.conn, ievaditaisId, jaunaisVards, jaunaisUzvards);
             Console.WriteLine("Done");
         }
         Console.ReadLine();
