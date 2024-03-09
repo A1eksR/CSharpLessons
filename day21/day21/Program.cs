@@ -27,7 +27,14 @@ class Program
         }
         else if(izvele == 3)
         {
-            Queries.UpdateEmp(connection.conn);
+            Console.WriteLine("Ievadi jauno id");
+            int jaunaisId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ievadi jauno vard");
+            String jaunaisVards = Console.ReadLine();
+            Console.WriteLine("Ievadi jauno uzvardu");
+            String jaunaisUzvards = Console.ReadLine();
+
+            Queries.UpdateEmp(connection.conn, jaunaisId, jaunaisVards, jaunaisUzvards);
             Console.WriteLine("Done");
         }
         Console.ReadLine();

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.Data.Sqlite;
 
 namespace day21
@@ -46,18 +48,12 @@ namespace day21
 
             cmd.ExecuteNonQuery();
         }
-        public static void UpdateEmp(SqliteConnection conn)
-        {
-            Console.WriteLine("Ievadi jauno id");
-            int jaunaisId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Ievadi jauno vard");
-            String jaunaisVards = Console.ReadLine();
-            Console.WriteLine("Ievadi jauno uzvardu");
-            String jaunaisUzvards = Console.ReadLine();
-
+        public static void UpdateEmp(SqliteConnection conn, int jaunaisId, String jaunaisVards, String jaunaisUzvards)
+        { 
             SqliteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "UPDATE Employees(EmplpyeeId, FirstName, Lastname)" +
-                "VALUES(@id, @firstName, @lastName);";
+            cmd.CommandText = "update employee set employees.Id = @id where employeeId = jaunaisId"+
+                "update employee set firstName = @firstName where FirstName = jaunaisVards"+
+                "update employee set lastName = @lastName where LastName = jaunaisUzvards";
 
             cmd.Parameters.AddWithValue("@id", jaunaisId);
             cmd.Parameters.AddWithValue("@firstName", jaunaisVards);
