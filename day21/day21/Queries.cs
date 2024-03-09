@@ -46,6 +46,23 @@ namespace day21
 
             cmd.ExecuteNonQuery();
         }
+        public static void UpdateEmp(SqliteConnection conn)
+        {
+            Console.WriteLine("Ievadi jauno id");
+            int jaunaisId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ievadi jauno vard");
+            String jaunaisVards = Console.ReadLine();
+            Console.WriteLine("Ievadi jauno uzvardu");
+            String jaunaisUzvards = Console.ReadLine();
+
+            SqliteCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "UPDATE Employees(EmplpyeeId, FirstName, Lastname)" +
+                "VALUES(@id, @firstName, @lastName);";
+
+            cmd.Parameters.AddWithValue("@id", jaunaisId);
+            cmd.Parameters.AddWithValue("@firstName", jaunaisVards);
+            cmd.Parameters.AddWithValue("@lastName", jaunaisUzvards);
+        }
     }
 }
 
