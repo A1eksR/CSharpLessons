@@ -11,7 +11,7 @@ namespace day21
     {
         public static List<Employee> ReadFile()
         {
-            List<Employee> list = new List<Employee>();
+            List<Employee> list1 = new List<Employee>();
             String filename = "Untitled.txt";
             try
             {
@@ -30,7 +30,7 @@ namespace day21
                     line = sr.ReadLine();
                 }
 
-                list = JsonSerializer.Deserialize<List<Employee>>(json);
+                list1 = JsonSerializer.Deserialize<List<Employee>>(json);
                 sr.Close();
             }
             catch (Exception ex)
@@ -38,7 +38,7 @@ namespace day21
                 Console.WriteLine("Error!");
                 Console.WriteLine(ex.Message);
             }
-            return list;
+            return list1;
         }
 
         public static void SaveFile(String json)
