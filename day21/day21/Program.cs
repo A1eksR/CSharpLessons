@@ -11,19 +11,17 @@ class Program
         Connection connection = new Connection();
         Console.WriteLine("Izvelies ko gribi darit :");
         Console.WriteLine("1- saglabāt ierakstus no faila datubāzē, 2-saglabāt ierakstus no datubāzes failā");
-        List<Employee> list1 = FileRead.ReadFile();
-        List<Employee> lst = Queries.CreateEmplList(connection.conn);
+
         int izvele = Convert.ToInt32(Console.ReadLine());
         if(izvele == 2)
         {
+            List<Employee> lst = Queries.CreateEmplList(connection.conn);
             InsertIntoFile(connection, lst);
         }
         else if(izvele == 1)
         {
-            foreach(var emp in list1)
-            {
-                lst.Add(emp);
-            }
+            List<Employee> lst = FileRead.ReadFile();
+            Homework(lst);
         }
         Console.ReadLine();
 
@@ -42,9 +40,8 @@ class Program
         FileRead.SaveFile(json);
     }
 
-    /*public static void homework()
+    public static void Homework(List<Employee> lst)
     {
-        List<Employee> lst = FileRead.ReadFile();
         Connection connection = new Connection();
 
         foreach (var emp in lst)
@@ -53,7 +50,7 @@ class Program
         }
 
         Console.ReadLine();
-    }*/
+    }
 
     
 

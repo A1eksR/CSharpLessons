@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using Microsoft.Data.Sqlite;
 
 namespace day21
@@ -32,9 +34,9 @@ namespace day21
         public static void InsertEmp(SqliteConnection conn, Employee e)
         {
             SqliteCommand cmd = conn.CreateCommand();
-
-            cmd.CommandText = "INSERT INTO Employees(EmployeeId, FirstName, Lastname, city, country) " +
-                "VALUES (@id, @firstName, @lastName, @city, @country)";
+            cmd.CommandText = "INSERT INTO Employees(EmployeeId, FirstName, Lastname, city, country)" +
+                " VALUES(@id, @firstName, @lastName, @city, @country);";
+            e.Print();
 
             cmd.Parameters.AddWithValue("@id", e.id);
             cmd.Parameters.AddWithValue("@firstName", e.vards);
