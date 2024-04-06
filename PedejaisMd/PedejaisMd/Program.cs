@@ -13,7 +13,7 @@ class Program
         int izvele = Convert.ToInt32(Console.ReadLine());
         if (izvele == 2)
         {
-            List<Customer> lst = Queries.CreateEmplList(connection.conn);
+            List<Customer> lst = Queries.CreateCuslList(connection.conn);
             InsertIntoFile(connection, lst);
             Console.WriteLine("Done");
         }
