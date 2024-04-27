@@ -20,7 +20,7 @@ class Program
     static List<int> Uzd2(List<int> list)
     {
         List<int> listReverse = new List<int>();
-        for(int i = 0; i > list.Count; i--)
+        for(int i = list.Count-1; i >= 0; i--)
         {
             listReverse.Add(list[i]);
         }
