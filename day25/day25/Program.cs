@@ -4,7 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Uzd3Dala1();
         int rezultats = Uzd3Dala2();
         Console.WriteLine("skaitlis : " + rezultats);
     }
@@ -22,7 +21,7 @@ class Program
         
         bool nepareizaVertiba = true;
         int rezultats = 0;
-        while(nepareizaVertiba = true)
+        while(nepareizaVertiba)
         {
             try
             {
