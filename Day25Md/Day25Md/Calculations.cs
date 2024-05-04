@@ -6,7 +6,7 @@ namespace Day25Md
         public static int Faktorials(int skaitlis)
         {
             int result1 = 1;
-            for (int i = 1; i < skaitlis; i++)
+            for (int i = 1; i <= skaitlis; i++)//vai ari skaitlis +1
             {
                 result1 = result1 * i;
                 
