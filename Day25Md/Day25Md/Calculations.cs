@@ -16,10 +16,10 @@ namespace Day25Md
         }
 
 
-        public static int Kapinasana(int skaitlis)
+        public static int Kapinasana(int skaitlis, int pakape)
         {
             int result2 = 1; ;
-            for (int i = 0; i <= skaitlis - 1; i++)
+            for (int i = 0; i < pakape ; i++)
             {
                 result2 = result2 * skaitlis;
             }
