@@ -27,9 +27,6 @@ public class SampleTest
         
     }
 
-
-
-
     [Fact]
     public void GetSum()
     {
