@@ -12,8 +12,8 @@ public class UnitTest1
 
         ArrayTools arrayTools = new ArrayTools();
 
-        int expected = 1;
-        int result = ArrayTools.SearchArray(a, b);
+        int expected = 2;
+        int result = arrayTools.SearchArray(a, b);
 
         Assert.Equal(expected, result);
     }
