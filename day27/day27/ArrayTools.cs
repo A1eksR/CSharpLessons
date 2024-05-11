@@ -5,19 +5,21 @@ namespace day27
 	{
         public int SearchArray(int a, int[] arr)
         {
-            int result = 0;
+            int result = -1;
             for(int i = 0; i < arr.Length; i++)
             {
-                if (arr[a] == a)
+                if (arr[i] == a)
                 {
                     result = a;
+                    //return result;
+
                 }
-                else
-                {
-                    result = -1;
-                }
+               
+                
+
             }
             return result;
+            
         }
     }
 }
