@@ -7,8 +7,8 @@ public class UnitTest1
     [Fact]
     public void SearchArray()
     {
-        int a = 2;
-        int[] b = { 0,1,2,3,4,5,6 };
+        int a = 25;
+        int[] b = { 1,3,25,36,41,51,62 };
 
         ArrayTools arrayTools = new ArrayTools();
 
