@@ -6,15 +6,15 @@ namespace day27
         public int SearchArray(int a, int[] arr)
         {
             int result = 0;
-            if (a > arr.Length || arr == null)
+            for(int i = 0; i < arr.Length; i++)
             {
-                result = -1;
-            }
-            else
-            {
-                for(int i = arr.Length; i <= a; i++)
+                if (arr[a] == a)
                 {
-                    result = i;
+                    result = a;
+                }
+                else
+                {
+                    result = -1;
                 }
             }
             return result;
