@@ -10,8 +10,8 @@ namespace day27
             {
                 if (arr[i] == a)
                 {
-                    result = a;
-                    //return result;
+                    result = i;
+                    
 
                 }
                
