@@ -10,23 +10,7 @@ class Program
             int skaitlis1 = Convert.ToInt32(Console.ReadLine());
             int skaitlis2 = Convert.ToInt32(Console.ReadLine());
 
-            int lielakais = 0;
-            int mazakais = 0;
-
-            if(skaitlis1 > skaitlis2)
-            {
-                skaitlis1 = lielakais;
-            }
-            else if(skaitlis2 > skaitlis1)
-            {
-                skaitlis2 = mazakais;
-            }
-            else
-            {
-                Console.WriteLine("Error");
-            }
-
-            List<int> list2 = Uzdevums.AtgrieztList(lielakais, mazakais);
+            List<int> list2 = Uzdevums.AtgrieztList(skaitlis1, skaitlis2);
 
             for(int i = 0; i< list2.Count; i++)
             {
