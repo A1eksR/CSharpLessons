@@ -37,9 +37,20 @@ public class UnitTest1
     {
         int[] b = { 1, 3, 25, 36, 41, 51, 62 };
 
-        List<int> lst = new List<int>();
-        lst.Add(1);
+        List<int> lst = new List<int>(); ;
+        lst.Add(0);
+        lst.Add(0);
+        lst.Add(0);
+        lst.Add(36);
+        lst.Add(0);
+        lst.Add(0);
+        lst.Add(62);
 
-        int expected = 
+        ArrayTools arrayTools = new ArrayTools();
+
+        List<int> expected = lst;
+        List<int> result = arrayTools.Uzd2(b);
+
+        Assert.Equal(expected, result);
     }
 }
