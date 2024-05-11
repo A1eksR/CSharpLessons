@@ -31,4 +31,15 @@ public class UnitTest1
 
         Assert.Equal(expected, result);
     }
+
+    [Fact]
+    public void Uzd2()
+    {
+        int[] b = { 1, 3, 25, 36, 41, 51, 62 };
+
+        List<int> lst = new List<int>();
+        lst.Add(1);
+
+        int expected = 
+    }
 }
