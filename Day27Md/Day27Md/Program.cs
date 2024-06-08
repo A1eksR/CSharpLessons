@@ -9,6 +9,9 @@ class Program
         list.Add("BB");
         list.Add("ccc");
 
+        String a = "aaaaaaaaaaaa";
+        int b = a.Length;
+
 
     }
 }
