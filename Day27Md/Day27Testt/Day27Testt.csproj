@@ -20,4 +20,9 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+    <ItemGroup>
+	    <ProjectReference Include="Day27Md\Day27Md.csproj" />
+    </ItemGroup>
+
+
 </Project>
