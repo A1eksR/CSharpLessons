@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day27Md", "Day27Md\Day27Md.csproj", "{7EBC34C3-B822-478E-B6F3-5F895A2410A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day27MdTest", "Day27MdTest\Day27MdTest.csproj", "{BB68543F-4E89-4B78-9375-F4DC1BDBC339}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EBC34C3-B822-478E-B6F3-5F895A2410A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBC34C3-B822-478E-B6F3-5F895A2410A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBC34C3-B822-478E-B6F3-5F895A2410A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBC34C3-B822-478E-B6F3-5F895A2410A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB68543F-4E89-4B78-9375-F4DC1BDBC339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB68543F-4E89-4B78-9375-F4DC1BDBC339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB68543F-4E89-4B78-9375-F4DC1BDBC339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB68543F-4E89-4B78-9375-F4DC1BDBC339}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCEB9D86-5E63-4CF7-A13B-57CCCD63209C}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.scope = text/x-csharp
+	EndGlobalSection
+EndGlobal
